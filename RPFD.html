@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+   <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+        <meta http-equiv = "refresh" content = "5" />
+           <style>
+
+
+#Completed {
+    border-radius: 15px;
+            background: #73AD21;
+    align-content: center;
+            padding: 20px;
+            color: white;
+            width: auto;
+            height: auto;
+            font-family:Tahoma;
+        }
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    }
+
+    i{
+  border: solid black;
+    border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+#InProgress {
+border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width:  auto;
+    height: auto;    
+    font-family:Tahoma;
+} 
+
+#NotYetStarted {
+    border-radius: 15px;
+    border: 2px solid #A4A0A0;
+    padding: 20px; 
+    width:  auto;
+    height: auto;    
+    font-family:Tahoma;
+} 
+#startNend {
+    border-radius: 15px;
+    background: #FF6347;
+    align-content: center;
+    padding: 20px; 
+    color:white;
+    width:  auto;
+    height: auto;    
+    font-family:Tahoma;
+}	
+#rcornersArrow {
+    border-radius: 75px;    
+    padding: 20px;  
+} </style>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+<body>
+
+<div ng-app="" ng-init="names=[{name:'Read Top 30 Mails',tooltip:'Status:Completed \n Message:16 Mails Read ',status:'Completed',img:'envelope-open'},{name:'Reading All IPhone Data',tooltip:'Status:Completed \n Message:Reading all iphons names  Started from Flipkart ',status:'Completed',img:'flip.png'},{name:'Creating IPhone Folders',tooltip:'Status:Completed \n Message:24 Folders Created',status:'Completed',img:'folder-o'},{name:'Send Mail to Boss',tooltip:'Status:Completed \n Message:Mail Sent',status:'Completed',img:'send-o'}]">
+<center> 
+ <h2 style = "font-family:Tahoma;"> Robotic Process Flow Diagram</h2>
+</center>
+<hr/>
+<table><tr><td><h3>&nbsp;&nbsp;Robot Name : </h3> </td><td><h3 style = "font-family:Tahoma;color:#b30000"> mailReading</h3></td></tr></table>
+
+<br/>   
+ <center>
+<div>
+ <div style="float: left;"><table width = 100%><tr><td align=center width = 50 height=50>
+  <div class="fa fa-eercast" style="font-size:36px"></div>
+  </td></tr><tr><td id = "startNend" align=center valign = middle> START </td></tr></table> </div>
+ <div style="float: left;">
+ <table width = 100%><tr><td align=center width = 50 height=50> 
+ </td></tr><tr><td id = "rcornersArrow"><i class="right"></i></td></tr></table>
+ </div>
+ </div>  
+<div ng-repeat="x in names">
+ <div style = "float: left;"><table width=100%><tr><td align = center   width=50 height=50>
+ 
+ <div ng-if="x.img.indexOf('.') !== -1">  
+ <img src = "{{ x.img }}" width=45 height=45 />
+      </div>
+       <div ng-if= "x.img.indexOf('.') == -1" >
+        <div class="fa fa-{{ x.img }}"  width=50 height=50 style="font-size:36px"> </div>
+ </div>
+   </td></tr><tr><td title = "{{ x.tooltip }}"  id="{{ x.status }}" align=center valign = middle>{{ x.name }}</td></tr></table> </div>
+ <div style = "float: left;">
+ <table  width=100%><tr><td align = center  width=50 height=50>
+ </td></tr><tr><td id = "rcornersArrow"><i class="right"></i></td></tr></table>
+ </div>
+ </div>
+ </div> 
+<div>
+ <div style = "float: left;"><table width=100%><tr><td align = center width=50 height=50>
+  <div class="fa fa-eercast" style="font-size:36px"></div>
+  </td></tr><tr><td id = "startNend" align=center valign = middle> END </td></tr></table> </div>
+ </div>
+</center>
+</body>
+</html>
